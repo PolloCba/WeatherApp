@@ -1,7 +1,6 @@
 import React from 'react';
 
-function About() {
-
+export default function About() {
   return (
   <div>
     <h1>Mi nombre es Claudio Amaya</h1>
@@ -9,5 +8,3 @@ function About() {
   </div>
   );
 };
-
-export default About;

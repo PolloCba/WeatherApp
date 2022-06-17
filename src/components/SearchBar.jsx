@@ -1,17 +1,20 @@
-import React from 'react';
 import s from './SearchBar.module.css'
+import React, { useState } from "react";
 
 export default function SearchBar({onSearch}) {
-  // acá va tu código
-  const buscar = (event)=>{
-    event.preventDefault();
-    const inputSearch = document.querySelector('#inputSearch')
-    onSearch(inputSearch.value)
-    inputSearch.focus()
-    inputSearch.value = "";
-  }
-  return <form onSubmit ={buscar}>
-    <input id="inputSearch" type="text" placeholder="Agrega una nueva ciudad..."/> 
-    <button type="submit" className={s.btn}>Buscar</button>
+const [city, setCity] = useState("");
+  return (
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      onSearch(city);
+    }}>
+      <input
+        type="text"
+        placeholder="Ciudad..."
+        value={city}
+        onChange={e => setCity(e.target.value)}
+      />
+      <input type="submit" value="Agregar" className={s.btn} />
     </form>
+  );
 };

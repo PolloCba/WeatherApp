@@ -2,11 +2,11 @@ import React from 'react';
 import Card from './Card'
 import s from './Cards.module.css'
 
-export default function Cards({ cities, onRemove }) {
+export default function Cards({ cities, onClose }) {
 
   return (
   <div className={s.cards}>
-    {cities.map((city) => (
+    {cities.map(city => (
       <Card
           key={city.id}
           max={city.max}
@@ -14,7 +14,7 @@ export default function Cards({ cities, onRemove }) {
           name={city.name}
           img={city.img}
           id= {city.id}
-          onClose={() => onRemove(city.id)}
+          onClose={() => onClose(city.id)}
         />
     ))}
   </div>

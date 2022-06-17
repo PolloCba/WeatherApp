@@ -5,10 +5,8 @@ import { Link } from 'react-router-dom';
 export default function Card({max ,min, name, img, onClose, id}) {
   return (
   <div className={s.principal}>
-    <Link to={`/ciudad/${id}`} >
-  <h5 className="card-title">{name}</h5>
-    </Link>
     <button onClick={onClose} className={s.btn}>X</button>
+    <Link to={`/city/${id}`} >
       <div>
         <span className={s.cardTitle}>{name}</span>
       </div>
@@ -25,6 +23,7 @@ export default function Card({max ,min, name, img, onClose, id}) {
           <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt={`clima-${img}`}/>
         </div>
       </div>
+      </Link>
   </div>
   )
 };
